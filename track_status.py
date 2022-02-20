@@ -57,7 +57,7 @@ def main():
     
     
         googlesheeturl='https://docs.google.com/spreadsheets/d/17EW9CAOOwmefEP4toLAubQhj7q-NgsjLRAlzCeKvIIs/edit#gid=1757221736'
-        creds=ServiceAccountCredentials.from_json_keyfile_name("D:\\Office\\Python\\Raj Dashboard Changes Track\\keys.json",scope)
+        creds=ServiceAccountCredentials.from_json_keyfile_name("./keys.json",scope)
         client=gspread.authorize(creds)
         sheet=client.open_by_url(googlesheeturl)
         main_worksheet=sheet.worksheet('Sheet3')
