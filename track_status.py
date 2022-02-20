@@ -10,6 +10,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 import time
 # import pyautogui
 from PIL import Image
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
 
 
 
@@ -85,7 +87,19 @@ def main():
             st.write('Total Shipment to track: ',len(df))
             # st.table(df)
             st.write('https://api.whatsapp.com/send?phone=919811648522&text=Hi%20Mam,%20The%20Status%20has%20not%20been%20updated%20for%20the%20following%20POs%20')
-            st.table(df)
+#             st.table(df)
+            fig=go.Figure(data=[go.Table(
+                columnorder=[1,2,3,4,5,6,7],
+                columnwidth=[350,300,300,500,900,200,300],
+                header=dict(values=['PO No','Courier','FC','Appointment_Date','Tracking_id','Status','Portal'],height=30),
+                cells=dict(values=[df['PO No'],df['Courier'],df['FC'],df['Appointment_Date'],df['Tracking_id'],df['Status'],df['Portal']]))])
+            fig.update_layout(width=1000,height=1500)
+            st.plotly_chart(fig) 
+
+
+
+
+
 #             time.sleep(4)
 #             ss=pyautogui.screenshot()
 #             img=np.array(ss)
