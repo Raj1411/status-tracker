@@ -7,7 +7,6 @@ import numpy as np
 from datetime import date
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from pretty_html_table import build_table
 import time
 import pyautogui
 from PIL import Image
