@@ -8,7 +8,7 @@ from datetime import date
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import time
-import pyautogui
+# import pyautogui
 from PIL import Image
 
 
