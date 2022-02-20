@@ -84,7 +84,7 @@ def main():
         else:
             st.write('Total Shipment to track: ',len(df))
             # st.table(df)
-            st.write('https://api.whatsapp.com/send?phone=919811648522&text=Hi%20Mam%20The%20Status%20has%20not%20been%20updated%20for%20these%20shipments%20PO%20No%20')
+            st.write('https://api.whatsapp.com/send?phone=919811648522&text=Hi%20Mam,%20The%20Status%20has%20not%20been%20updated%20for%20the%20following%20POs%20')
             st.table(df)
 #             time.sleep(4)
 #             ss=pyautogui.screenshot()
