@@ -86,14 +86,14 @@ def main():
             # st.table(df)
             st.write('https://api.whatsapp.com/send?phone=919811648522&text=Hi%20Mam%20The%20Status%20has%20not%20been%20updated%20for%20these%20shipments%20PO%20No%20')
             st.table(df)
-            time.sleep(4)
-            ss=pyautogui.screenshot()
-            img=np.array(ss)
-            img=Image.fromarray(img)
-            w,h=img.size
-            st.write(w,h)
-            img=img.crop((400,600,w-20,h-80))
-            st.image(img,width=1500)
+#             time.sleep(4)
+#             ss=pyautogui.screenshot()
+#             img=np.array(ss)
+#             img=Image.fromarray(img)
+#             w,h=img.size
+#             st.write(w,h)
+#             img=img.crop((400,600,w-20,h-80))
+#             st.image(img,width=1500)
             # for i in range(len(df)):
             #     st.write('PO No: ', df.iloc[i]['PO No']
             #     ,'\nCourier: ',df.iloc[i]['Courier']
