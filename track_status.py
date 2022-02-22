@@ -69,7 +69,7 @@ def main():
 
 
         df=main_worksheet.get_all_values()
-        df=pd.DataFrame(df,columns=['PO No','Courier','FC','Appointment_Date','Tracking_id','Status','Portal'])
+        df=pd.DataFrame(df,columns=['Portal','Po No','Appointment_Date','FC','Courier','Status'])
 
         df.drop(df.index[0],inplace=True)
         df.drop(df.index[2],inplace=True)
@@ -89,10 +89,10 @@ def main():
             st.write('https://api.whatsapp.com/send?phone=919811648522&text=Hi%20Mam,%20The%20Status%20has%20not%20been%20updated%20for%20the%20following%20POs%20')
 #             st.table(df)
             fig=go.Figure(data=[go.Table(
-                columnorder=[1,2,3,4,5,6,7],
-                columnwidth=[350,300,300,500,900,200,300],
-                header=dict(values=['PO No','Courier','FC','Appointment_Date','Tracking_id','Status','Portal'],height=30),
-                cells=dict(values=[df['PO No'],df['Courier'],df['FC'],df['Appointment_Date'],df['Tracking_id'],df['Status'],df['Portal']]))])
+                columnorder=[1,2,3,4,5,6],
+                columnwidth=[250,250,250,250,250,200],
+                header=dict(values=['Portal','Po No','Appointment_Date','FC','Courier','Status'],height=30,align='center',font=dict(size=15,color='white'),fill_color='#3D9970'),
+                cells=dict(values=[df['Portal'],df['Po No'],df['Appointment_Date'].dt.strftime('%d-%b-%Y'),df['FC'],df['Courier'],df['Status']]))])
             fig.update_layout(width=1000,height=1500)
             st.plotly_chart(fig) 
 
