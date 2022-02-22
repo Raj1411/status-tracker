@@ -78,7 +78,7 @@ def main():
         df=df[df['Status']!='Cancel']
         df=df[df['Appointment_Date']!='Pending']
         df['Appointment_Date']=pd.to_datetime(df['Appointment_Date'])
-        df=df[df['Appointment_Date']<=pd.to_datetime(date.today())]
+        df=df[df['Appointment_Date']<pd.to_datetime(date.today())]
         # st.write(df)
 
         if df.empty:
