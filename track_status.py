@@ -52,7 +52,7 @@ def main():
     st.markdown('''---------------------------------------------------------------------------------------------------------''')
     st.markdown(menu_touchup,unsafe_allow_html=True)
     
-    file_1=st.file_uploader("Upload Excel File", type=["json"])
+#     file_1=st.file_uploader("Upload Excel File", type=["json"])
 
     btn1=st.button('Track Shipment Status')
 
@@ -61,7 +61,7 @@ def main():
     
     
         googlesheeturl='https://docs.google.com/spreadsheets/d/17EW9CAOOwmefEP4toLAubQhj7q-NgsjLRAlzCeKvIIs/edit#gid=1757221736'
-        creds=ServiceAccountCredentials.from_json_keyfile_name(file_1.name,scope)
+        creds=ServiceAccountCredentials.from_json_keyfile_name(./keys.json,scope)
         client=gspread.authorize(creds)
         sheet=client.open_by_url(googlesheeturl)
         main_worksheet=sheet.worksheet('Sheet3')
